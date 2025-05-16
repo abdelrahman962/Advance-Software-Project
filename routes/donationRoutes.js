@@ -24,5 +24,5 @@ module.exports = router;
 
 
 // Track how donation is used (admin only)
-//router.post("/track", authenticateToken, authorizeRole("admin"), donationController.trackDonation);
+router.post("/track", authenticateToken, authorizeRole("admin"), donationController.trackDonation);
 
