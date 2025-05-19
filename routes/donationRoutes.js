@@ -17,12 +17,10 @@ router.get("/campaigns/:user_id", authenticateToken, authorizeRole("donor"), don
 //create campaign
 router.post('/create/:orphanage_id', donationController.createCampaign);
 
-// Get donation tracking details
 router.get("/track/:donationId", authenticateToken, donationController.getDonationTracking);
 module.exports = router;
 
 
 
-// Track how donation is used (admin only)
 router.post("/track", authenticateToken, authorizeRole("admin"), donationController.trackDonation);
 
